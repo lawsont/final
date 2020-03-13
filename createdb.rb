@@ -22,22 +22,64 @@ DB.create_table! :users do
   foreign_key :event_id
   String :name
   String :email
-  String :email
-  String :email
+  String :password
   Numeric :fav_plant_id_1
   Numeric :fav_plant_id_2
   Numeric :fav_plant_id_3
 end
 
 # Insert initial (seed) data
-events_table = DB.from(:events)
+plant_data_table = DB.from(:plant_data)
 
-events_table.insert(title: "Bacon Burger Taco Fest", 
-                    description: "Here we go again bacon burger taco fans, another Bacon Burger Taco Fest is here!",
-                    date: "June 21",
-                    location: "Kellogg Global Hub")
+plant_data_table.insert(plant_title: "Hydrangea", 
+                    description: "Hydrangeas have beautiful blooms of little colorful flowers. They bloom all summer long.")
 
-events_table.insert(title: "Kaleapolooza", 
-                    description: "If you're into nutrition and vitamins and stuff, this is the event for you.",
-                    date: "July 4",
-                    location: "Nowhere")
+plant_data_table.insert(plant_title: "Hosta", 
+                    description: "Hosta is the tried and true garden staple for the midwesterner. There are thousands of varieties with varying shades of green foliage.")
+
+plant_data_table.insert(plant_title: "Coneflower", 
+                    description: "Coneflowers have stunning flowers with a big eye in the middle. They come in deep oranges, reds and yellows.")
+
+plant_data_table.insert(plant_title: "Maple Tree", 
+                    description: "The most common tree in the midwest, you'll find this along streets, in parks and homes. They provide ample shade. ")
+
+plant_data_table.insert(plant_title: "Viburnum", 
+                    description: "Viburnum is a shrub that has unique leaves and many flowering branches. It has many benefits including berries in the late fall.")
+
+unique_plants_table = DB.from(:plant_data)
+
+unique_plants_table.insert(plant_id: 1, 
+                    latitude: 41.917782,
+                    longitude: -87.675539,
+                    user_id: 1)
+
+unique_plants_table.insert(plant_id: 2, 
+                    latitude: 41.917725,
+                    longitude: -87.675576,
+                    user_id: 1)
+
+unique_plants_table.insert(plant_id: 3, 
+                    latitude: 41.917712,
+                    longitude: -87.675576,
+                    user_id: 1)
+
+unique_plants_table.insert(plant_id: 4, 
+                    latitude: 41.917577,
+                    longitude: -87.675234,
+                    user_id: 1)
+
+unique_plants_table.insert(plant_id: 5, 
+                    latitude: 41.917532,
+                    longitude: -87.675229,
+                    user_id: 1)
+
+users_table = DB.from(:plant_data)
+
+users_table.insert(name: "Lawson Thalmann",
+                    email: "lawson.thalmann@kellogg.northwestern.edu",
+                    password: "lawson123",
+                    fav_plant_id_1: 1,
+                    fav_plant_id_2: 2,
+                    fav_plant_id_3: 3)
+
+
