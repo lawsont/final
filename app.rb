@@ -19,5 +19,7 @@ unique_plants_table = DB.from(:plant_data)
 users_table = DB.from(:plant_data)
 
 get "/" do
+    puts plant_data_table.all
+    @plants = plant_data_table.all 
     view "home"
 end

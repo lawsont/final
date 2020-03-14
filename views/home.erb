@@ -1,1 +1,15 @@
-<h1>Welcome to Plannter!</>
+<h1>Welcome to Plannter!</h1>
+<br>
+<p>Plannter allows anyone from hardcore gardeners or just plain nature-curious humans to idenfify and learn about the living world around them. Society today has us so wrapped up in the latest technology, that we don't even know what kind of tree is featured along our street. Now, you can find the listing of that tree on Plannter just like you use Google Maps to find a restaurant for your hot friday night date!</p>
+</br>
+
+<br>
+<h2>Find your favorite plants in the wild!</h2>
+<p> To get started, click on one of our popular plants below and see it shown on a map. You can find the closest one to your location, then go and check it out!</p>
+</br>
+
+<% for plant_title in @plants %>
+    <p> <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> <%= plant_title[:plant_title] %></a>  </p>
+<% end %>     
+
+
