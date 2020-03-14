@@ -9,7 +9,7 @@
 </br>
 
 <% for plant_title in @plants %>
-    <p> <a href="/plant_data/2" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> <%= plant_title[:plant_title] %></a>  </p>
+    <p> <a href="/plants/<%= plant_title[:plant_id] %>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> <%= plant_title[:plant_title] %></a>  </p>
 <% end %>     
 
 

@@ -25,4 +25,10 @@ get "/" do
 end
 
 get '/plants/:plant_id' do
+    puts params[:plant_id]
+    @plant = unique_plants_table.where(plant_id: params[:plant_id])
+    view "plant"
 end
+
+#      
+#       view "plant"

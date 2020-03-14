@@ -49,26 +49,31 @@ plant_data_table.insert(plant_title: "Viburnum",
 unique_plants_table = DB.from(:plant_data)
 
 unique_plants_table.insert(plant_id: 1, 
+                    plant_title: "Hydrangea",
                     latitude: 41.917782,
                     longitude: -87.675539,
                     user_id: 1)
 
 unique_plants_table.insert(plant_id: 2, 
+                    plant_title: "Hosta",
                     latitude: 41.917725,
                     longitude: -87.675576,
                     user_id: 1)
 
 unique_plants_table.insert(plant_id: 3, 
+                    plant_title: "Coneflower",
                     latitude: 41.917712,
                     longitude: -87.675576,
                     user_id: 1)
 
 unique_plants_table.insert(plant_id: 4, 
+                    plant_title: "Maple Tree",
                     latitude: 41.917577,
                     longitude: -87.675234,
                     user_id: 1)
 
 unique_plants_table.insert(plant_id: 5, 
+                    plant_title: "Viburnum",
                     latitude: 41.917532,
                     longitude: -87.675229,
                     user_id: 1)
