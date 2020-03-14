@@ -14,5 +14,10 @@ before { puts; puts "--------------- NEW REQUEST ---------------"; puts }       
 after { puts; }                                                                       #
 #######################################################################################
 
-events_table = DB.from(:events)
-rsvps_table = DB.from(:rsvps)
+plant_data_table = DB.from(:plant_data)
+unique_plants_table = DB.from(:plant_data)
+users_table = DB.from(:plant_data)
+
+get "/" do
+    view "home"
+end
