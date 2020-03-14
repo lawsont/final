@@ -23,3 +23,6 @@ get "/" do
     @plants = plant_data_table.all 
     view "home"
 end
+
+get '/plants/:plant_id' do
+end
