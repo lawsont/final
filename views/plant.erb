@@ -4,6 +4,8 @@
 <p>Below are your nearest search results for '<b><u><%= @plant_location[:plant_title] %></u></b>'
 </br>
 
+
+<% for plant_title in @plant_location %>
 <br>
 <ul class="list-unstyled">
   <li class="media">
@@ -14,4 +16,4 @@
     </div>
 </ul>
 </br>
-
+<% end %>  
