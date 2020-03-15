@@ -27,5 +27,6 @@ end
 get '/plants/:plant_id' do
     puts params[:plant_id]
     @plant = unique_plants_table.where(plant_id: params[:plant_id]).first
+    @plant_details = plant_data_table.where(plant_id: params[:plant_id]).first 
     view "plant"
 end

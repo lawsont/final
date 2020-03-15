@@ -1,1 +1,30 @@
-<h1><%= @plant[:plant_title] %></h1>
+<h1>Explore the Plant World Around You!</h1>
+
+<br>
+<p>Below are your nearest search results for '<b><u><%= @plant[:plant_title] %></u></b>'
+</br>
+
+<br>
+<ul class="list-unstyled">
+  <li class="media">
+    <img src="Coneflower.jpg" class="mr-3">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1"><b><u><%= @plant[:plant_title] %></u></b></h5>
+      <%= @plant_details[:description] %>
+    </div>
+  </li>
+  <li class="media my-4">
+    <img src="..." class="mr-3">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1"><b><u><%= @plant[:plant_title] %></u></b></h5>
+      <%= @plant_details[:description] %>
+    </div>
+  </li>
+  <li class="media">
+    <img src="..." class="mr-3">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1"><b><u><%= @plant[:plant_title] %></u></b></h5>
+      <%= @plant_details[:description] %>    </div>
+  </li>
+</ul>
+</br>
