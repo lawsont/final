@@ -32,7 +32,7 @@ get '/plants/:plant_id' do
     view "plant"
 end
 
-# still working on this
+# this works but need to figure out how to submit to a new page
 
 get "/plants/:plant_id/uniqueplant/new" do
     puts "params: #{params}"

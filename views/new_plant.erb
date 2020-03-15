@@ -4,7 +4,7 @@
 </h1>
 
 <br>
-<form>
+<form action="/plants/<%= @plant[:plant_id] %>/uniqueplant/create">
   <div class="form-group">
     <label>Is this plant on your property (private) or on public property?</label>
     <select class="form-control">
@@ -33,4 +33,5 @@
     <textarea class="form-control" rows="3"></textarea>
   </div>
 </form>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </br>
