@@ -29,7 +29,7 @@ get '/plants/:plant_id' do
 
     pp plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
-    @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).to_a[0]
+    @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).to_a[0] # I pulled this in successfully to plant.erb but it won't pull latitude for some reason
     view "plant"
 end
 
@@ -40,4 +40,16 @@ get "/plants/:plant_id/uniqueplant/new" do
 
     @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     view "new_plant"
+end
+
+# copied in - need to edit - also how do we get the form to submit and what do I put in the names in orange below?
+
+get "/plants/:plant_id/uniqueplant/create" do
+    puts params
+    @event = events_table.where(id: params["id"]).to_a[0]
+    unique_plants_table.insert(plant_id: params["plant_id"],
+                       user_id: session["user_id"],
+                       latitude: params["going"],
+                       comments: params["comments"])
+    view "create_rsvp"
 end
