@@ -55,3 +55,11 @@ get "/plants/:plant_id/uniqueplant/create" do
                        plant_title: @plant[:plant_title])
     view "create_plant"
 end
+
+get "/users/new" do 
+    view "new_user"
+end
+
+get "users/create" do
+    view "create_user"
+end    
