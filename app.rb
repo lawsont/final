@@ -29,6 +29,7 @@ get '/plants/:plant_id' do
 
     pp plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
+    pp unique_plants_table.where(plant_id: params[:plant_id]).to_a[0]
     @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).to_a[0] # I pulled this in successfully to plant.erb but it won't pull latitude for some reason
     view "plant"
 end

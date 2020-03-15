@@ -1,37 +1,21 @@
 <h1>
-    <i class="fas fa-leaf"></i>     Add a new plant
+    <i class="fas fa-leaf"></i>    Add a new <u><%= @plant[:plant_title] %></u>
 
 </h1>
 
-<br>
+# need to change the questions and do the name = thing so that I can map it to the right table. unique_plants?
+
 <form action="/plants/<%= @plant[:plant_id] %>/uniqueplant/create">
   <div class="form-group">
-    <label>Is this plant on your property (private) or on public property?</label>
-    <select class="form-control">
-      <option>Private</option>
-      <option>Public</option>
+    <label>Are you going?</label>
+    <select class="form-control" name="going">
+      <option value="1">Yes</option>
+      <option value="0">No</option>
     </select>
   </div>
   <div class="form-group">
-    <label>Plant Name</label>
-    <input type="text" class="form-control">
+    <label>Comments</label>
+    <textarea class="form-control" rows="3" name="comments"></textarea>
   </div>
-  <div class="form-group">
-    <label>Account Email Address</label>
-    <input type="email" class="form-control" placeholder="name@example.com">
-  </div>
-    <div class="form-group">
-    <label>Latitude</label>
-    <input type="email" class="form-control" placeholder="format '41.917782'">
-  </div>
-    <div class="form-group">
-    <label>Longitude</label>
-    <input type="email" class="form-control" placeholder="format '-87.675539'">
-  </div>
-  <div class="form-group">
-    <label>Description</label>
-    <textarea class="form-control" rows="3"></textarea>
-  </div>
-</form>
   <button type="submit" class="btn btn-primary">Submit</button>
-</br>
+</form>
