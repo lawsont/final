@@ -5,14 +5,17 @@
 </br>
 
 
-<% for plant_title in @plant_location %>
+<% for latitude in @plant_instances %>
 <br>
 <ul class="list-unstyled">
   <li class="media">
     <img src="Coneflower.jpg" class="mr-3">
     <div class="media-body">
-      <h5 class="mt-0 mb-1"><b><u><%= @plant_location[:plant_title] %></u></b></h5>
-      <p>Location: <%= @plant_location[:latitude] %></p>  
+      <h5 class="mt-0 mb-1">
+
+      <b><u>Location: <%= @plant_location[:latitude] %>, <%= @plant_location[:longitude] %></u></b>
+      
+      </h5>
     </div>
 </ul>
 </br>

@@ -19,8 +19,8 @@ unique_plants_table = DB.from(:unique_plants)
 users_table = DB.from(:users)
 
 get "/" do
-    puts unique_plants_table.all
-    @plants = unique_plants_table.all.to_a
+    puts plant_data_table.all
+    @plants = plant_data_table.all.to_a
     view "home"
 end
 
@@ -30,7 +30,9 @@ get '/plants/:plant_id' do
     pp plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     pp unique_plants_table.where(plant_id: params[:plant_id]).to_a[0]
-    @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).to_a[0] # I pulled this in successfully to plant.erb but it won't pull latitude for some reason
+#    @plant_name = unique_plants_table.where(plant_id: params[:plant_id]).to_a[:plant_title]
+    @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).to_a[0]
+    @plant_instances = unique_plants_table.where(plant_id: @plant[:plant_id])
     view "plant"
 end
 

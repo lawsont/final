@@ -85,6 +85,18 @@ unique_plants_table.insert(plant_id: 5,
                     longitude: -87.675229,
                     user_id: 1)
 
+unique_plants_table.insert(plant_id: 3, 
+                    plant_title: "Coneflower",
+                    latitude: 41.917579,
+                    longitude: -87.675212,
+                    user_id: 1)     
+                    
+unique_plants_table.insert(plant_id: 3, 
+                    plant_title: "Coneflower",
+                    latitude: 41.917534,
+                    longitude: -87.675222,
+                    user_id: 1)                               
+
 users_table = DB.from(:users)
 
 users_table.insert(name: "Lawson Thalmann",
