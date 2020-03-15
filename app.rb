@@ -20,7 +20,7 @@ users_table = DB.from(:plant_data)
 
 get "/" do
     puts plant_data_table.all
-    @plants = plant_data_table.all 
+    @plants = plant_data_table.all.to_a
     view "home"
 end
 
@@ -29,6 +29,7 @@ get '/plants/:plant_id' do
 
     pp plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
+    @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).to_a[0]
     view "plant"
 end
 
