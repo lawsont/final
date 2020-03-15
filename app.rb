@@ -25,8 +25,10 @@ get "/" do
 end
 
 get '/plants/:plant_id' do
-    puts params[:plant_id]
-    @plant = unique_plants_table.where(plant_id: params[:plant_id]).first
-    @plant_details = plant_data_table.where(plant_id: params[:plant_id]).first 
+    puts "params: #{params}"
+
+    pp plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
+    @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     view "plant"
+
 end
