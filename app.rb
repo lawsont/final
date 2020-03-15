@@ -30,5 +30,13 @@ get '/plants/:plant_id' do
     pp plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     view "plant"
+end
 
+# still working on this
+
+get "/plants/:plant_id/uniqueplant/new" do
+    puts "params: #{params}"
+
+    @plant = plant_data_table.where(id: params[:id]).to_a[0]
+    view "new_plant"
 end
