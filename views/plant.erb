@@ -1,11 +1,11 @@
 <h1>Explore the Plant World Around You!</h1>
 
 <br>
-<p>Below are your nearest search results for '<b><u><%= @plant_location[:plant_title] %></u></b>'
+<p>Below are your nearest search results for 
 </br>
 
 
-<% for latitude in @plant_instances %>
+<% for @plant_location in @plant_instances %>
 <br>
 <ul class="list-unstyled">
   <li class="media">
@@ -13,7 +13,8 @@
     <div class="media-body">
       <h5 class="mt-0 mb-1">
 
-      <b><u>Location: <%= @plant_location[:latitude] %>, <%= @plant_location[:longitude] %></u></b>
+
+<%= @plant_location[:latitude] %>
       
       </h5>
     </div>

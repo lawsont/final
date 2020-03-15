@@ -31,8 +31,9 @@ get '/plants/:plant_id' do
     @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     pp unique_plants_table.where(plant_id: params[:plant_id]).to_a[0]
 #    @plant_name = unique_plants_table.where(plant_id: params[:plant_id]).to_a[:plant_title]
-    @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).to_a[0]
-    @plant_instances = unique_plants_table.where(plant_id: @plant[:plant_id])
+    @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).all.to_a
+    @plant_instances = unique_plants_table.where(plant_id: @plant[:plant_id]).all.to_a
+    @plant_lat_long = unique_plants_table.where(plant_id: @plant[:plant_id]).all.to_a
     view "plant"
 end
 
