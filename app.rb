@@ -30,14 +30,11 @@ get '/plants/:plant_id' do
     pp plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     pp unique_plants_table.where(plant_id: params[:plant_id]).to_a[0]
-#    @plant_name = unique_plants_table.where(plant_id: params[:plant_id]).to_a[:plant_title]
     @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).all.to_a
     @plant_instances = unique_plants_table.where(plant_id: @plant[:plant_id]).all.to_a
     @plant_lat_long = unique_plants_table.where(plant_id: @plant[:plant_id]).all.to_a
     view "plant"
 end
-
-# this works but need to figure out how to submit to a new page
 
 get "/plants/:plant_id/uniqueplant/new" do
     puts "params: #{params}"
@@ -50,10 +47,11 @@ end
 
 get "/plants/:plant_id/uniqueplant/create" do
     puts params
-    @event = events_table.where(id: params["id"]).to_a[0]
+    @plant = plant_data_table.where(plant_id: params["plant_id"]).to_a[0]
     unique_plants_table.insert(plant_id: params["plant_id"],
-                       user_id: session["user_id"],
-                       latitude: params["going"],
-                       comments: params["comments"])
-    view "create_rsvp"
+                       user_id: 1,         # not sure what to do here... session["user_id"],
+                       latitude: params["latitude"],
+                       longitude: params["longitude"],
+                       plant_title: @plant[:plant_title])
+    view "create_plant"
 end
