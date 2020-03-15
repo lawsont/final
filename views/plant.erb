@@ -1,7 +1,7 @@
 <h1>Explore the Plant World Around You!</h1>
 
 <br>
-<p>Below are your nearest search results for '<b><u><%= @plant[:plant_title] %></u></b>'
+<p>Below are your nearest search results for '<b><u><%= @plant_location[:plant_title] %></u></b>'
 </br>
 
 <br>
@@ -9,24 +9,9 @@
   <li class="media">
     <img src="Coneflower.jpg" class="mr-3">
     <div class="media-body">
-      <h5 class="mt-0 mb-1"><b><u><%= @plant[:plant_title] %></u></b></h5>
-      <p>Location: <%= @plant[:lat_long] %></p>  
+      <h5 class="mt-0 mb-1"><b><u><%= @plant_location[:plant_title] %></u></b></h5>
+      <p>Location: <%= @plant_location[:latitude] %></p>  
     </div>
-  </li>
-  <li class="media my-4">
-    <img src="..." class="mr-3">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1"><b><u><%= @plant[:plant_title] %></u></b></h5>
-        <p>Location: <%= @plant[:lat_long] %></p>  
-    </div>
-  </li>
-  <li class="media">
-    <img src="..." class="mr-3">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1"><b><u><%= @plant_location %></u></b></h5>
-      <p>Location: <%= @plant[:lat_long] %></p>  
-    </div>
-  </li>
 </ul>
 </br>
 

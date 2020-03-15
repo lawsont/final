@@ -19,16 +19,16 @@ unique_plants_table = DB.from(:plant_data)
 users_table = DB.from(:plant_data)
 
 get "/" do
-    puts plant_data_table.all
-    @plants = plant_data_table.all.to_a
+    puts unique_plants_table.all
+    @plants = unique_plants_table.all.to_a
     view "home"
 end
 
 get '/plants/:plant_id' do
     puts "params: #{params}"
 
-    pp plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
-    @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
+#    pp plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
+#    @plant = plant_data_table.where(plant_id: params[:plant_id]).to_a[0]
     pp unique_plants_table.where(plant_id: params[:plant_id]).to_a[0]
     @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).to_a[0] # I pulled this in successfully to plant.erb but it won't pull latitude for some reason
     view "plant"
