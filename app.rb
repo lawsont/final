@@ -43,13 +43,11 @@ get "/plants/:plant_id/uniqueplant/new" do
     view "new_plant"
 end
 
-# copied in - need to edit - also how do we get the form to submit and what do I put in the names in orange below?
-
 get "/plants/:plant_id/uniqueplant/create" do
     puts params
     @plant = plant_data_table.where(plant_id: params["plant_id"]).to_a[0]
     unique_plants_table.insert(plant_id: params["plant_id"],
-                       user_id: 1,         # not sure what to do here... session["user_id"],
+                       user_id: session["user_id"],
                        latitude: params["latitude"],
                        longitude: params["longitude"],
                        plant_title: @plant[:plant_title])
