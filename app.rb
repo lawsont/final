@@ -33,6 +33,7 @@ get '/plants/:plant_id' do
     @plant_location = unique_plants_table.where(plant_id: params[:plant_id]).all.to_a
     @plant_instances = unique_plants_table.where(plant_id: @plant[:plant_id]).all.to_a
     @plant_lat_long = unique_plants_table.where(plant_id: @plant[:plant_id]).all.to_a
+#    @users_table = users_table
     view "plant"
 end
 
@@ -53,13 +54,6 @@ get "/plants/:plant_id/uniqueplant/create" do
                        plant_title: @plant[:plant_title])
     view "create_plant"
 end
-
-get "/users/new" do 
-    view "new_user"
-end
-
-
-
 
 # display the signup form (aka "new")
 get "/users/new" do
