@@ -1,7 +1,7 @@
 <h1>Explore the Plant World Around You!</h1>
 
 <br>
-<p>Below are your nearest search results for 
+<p>See all of the <u><%= @plant[:plant_title] %></u> in your area below.</p>
 </br>
 
 
@@ -9,12 +9,12 @@
 <br>
 <ul class="list-unstyled">
   <li class="media">
-    <img src="Coneflower.jpg" class="mr-3">
+    <i class="fas fa-leaf"></i>
     <div class="media-body">
       <h5 class="mt-0 mb-1">
 
 
-<%= @plant_location[:latitude] %>, <%= @plant_location[:longitude] %>
+        <%= @plant_location[:latitude] %>, <%= @plant_location[:longitude] %>
       
       </h5>
     </div>

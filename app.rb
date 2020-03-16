@@ -14,21 +14,12 @@ before { puts; puts "--------------- NEW REQUEST ---------------"; puts }       
 after { puts; }                                                                       #
 #######################################################################################
 
-# put your API credentials here (found on your Twilio dashboard)
-# put your API credentials here (found on your Twilio dashboard)
-account_sid = ENV[TWILIO_ACCOUNT_SID]
-auth_token = ENV[TWILIO_AUTH_TOKEN]
+# Twilio API credentials here
+# account_sid = TWILIO_ACCOUNT_SID
+# auth_token = TWILIO_AUTH_TOKEN
 
 # set up a client to talk to the Twilio REST API
-client = Twilio::REST::Client.new(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-
-
-client.messages.create(
- from: "+19723629530", 
- to: "+18479897160",
- body: "Hey KIEI 451!"
-)
-
+# client = Twilio::REST::Client.new(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 plant_data_table = DB.from(:plant_data)
 unique_plants_table = DB.from(:unique_plants)
@@ -69,6 +60,11 @@ get "/plants/:plant_id/uniqueplant/create" do
                        longitude: params["longitude"],
                        plant_title: @plant[:plant_title])
     view "create_plant"
+    # client.messages.create(
+    #     from: "+19723629530", 
+    #     to: "+18479897160",
+    #     body: "A new <%= @plant[:plant_title] %> was added"
+    #     )
 end
 
 # display the signup form (aka "new")
